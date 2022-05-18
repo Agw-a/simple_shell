@@ -1,4 +1,3 @@
-																		MEMORY
 #include "shell.h"
 
 /**
