@@ -49,7 +49,7 @@ void _isatty(void)
 }
 
 /**
- * main- simple shell
+ * main- simple shell function
  * Return: 0 on function sucesss
  */
 int main(void)
