@@ -1,9 +1,9 @@
 /**
  * _error - prints the error output of a file
- * @argv: name of program
+ * @argv: name of the program
  * @count: number of prompt
  * @args: command to be put in
- * Return: 0 on success
+ * Return: 0 always success
  */
 int *_error(char *argv, int count, char *args)
 {
