@@ -74,15 +74,15 @@ char **sparse_str(char *line, char **env)
 	if (tokens[0] == NULL)
 		tokens[posicion] = "\n"; /*si es nulo esa pos es un new line*/
 
-	/*COMPARA EL TOKENS[0]*/
+	/*COMPARE TOKENS[0]*/
 	if ((_strcmp(tokens[0], "exit") == 0) && tokens[1] == NULL)
 	{
-		free(line); /*LIBERA MEMORIA Y SALE DEL PROGRAMA*/
+		free(line); 
 		free(tokens);
 		exit(0);
 	}
 	if ((_strcmp(tokens[0], "env") == 0) && tokens[1] == NULL)
-		func_printenv(env);      /*Encuentra el enviroment*/
+		func_printenv(env);     
 
 	return (tokens);
 }
@@ -93,7 +93,7 @@ char **sparse_str(char *line, char **env)
  */
 void prompt(void)
 {
-	char *prompt = {"{^_^} "};
+	char *prompt = {"$ "};
 	char *buffer = getcwd(NULL, 0);
 
 	if (isatty(STDIN_FILENO))
