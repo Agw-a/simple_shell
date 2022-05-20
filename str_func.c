@@ -1,92 +1,59 @@
-#include "simple_shell.h"
+#include "simpleshell.h"
 
 /**
- * _strdup - returns a pointer to a newly
- * allocated space in memory, which
- * contains a copy of the string given as a parameter
- * @str: pointer to a string
- * Return: pointer to a string
+ * _strdup - copes a string to another
+ * @str: the array
+ * Return: pointer of sting copied
  */
 char *_strdup(char *str)
 {
-	int i, l;
-	char *new;
+	int i, j;
+	char *s = NULL;
 
-	if (!str)
-	{
-		return (NULL);
-	}
-	for (i = 0; i < l; i++)
-	{
-		new[i] = str[i];
-	}
-	new[l] = str[l];
-	return (new);
-}
-/**
- * concat_all - concats 3 strings in a newly allocated memory
- * @name: first string
- * @sep: second string
- * @value: Third string
- * Return: pointer to the new string
- */
-char *concat_all(char *name, char *sep, char *value)
-{
-	char *result;
-	int l1, l2, l3, i, k;
-
-	l1 = _strlen(name);
-	l2 = _strlen(sep);
-	l3 = _strlen(value);
-	result = malloc(l1 + l2 + l3 + 1);
-	if (!result)
-	return (NULL);
-	for (i = 0; name[i]; i++)
-	result[i] = name[i];
-	k = i;
-	for (i = 0; sep[i]; i++)
-	result[k + i] = sep[i];
-	k = k + i;
-	result[k] = '\0';
-	return (result);
-}
-/**
- * _strlen - it gives the length of a string
- * @s: pointer to the string
- * Return: the length of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*(s + i) != '\0')
-	{
+	if (str == NULL)
+		return (0);
+	for (i = 0; str[i]; i++)
+		;
 	i++;
-	}
-	return (i);
-}
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-/**
- * _puts - prints a string
- * @str: pointer to string
- */
-void _puts(char *str)
-{
-	int i = 0;
-
-	while (str[i])
+	s = malloc(i * sizeof(char *));
+	if (!s)
+		return (NULL);
+	for (j = 0; j < i; j++)
 	{
-		_putchar(str[i]);
-		i++;
+		s[j] = str[j];
 	}
+	return (s);
+}
+
+/**
+ * _itoa - integer to ascii
+ * @num: num
+ * @base: base
+ * Return: char
+ * Reference: https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407
+ **/
+char *_itoa(int num, int base)
+{
+	static char *array = "0123456789abcdef";
+	static char buffer[50];
+	char sign = 0;
+	char *ptr;
+	unsigned long n = num;
+
+	if (num < 0)
+	{
+		n = -num;
+		sign = '-';
+	}
+	ptr = &buffer[49];
+	*ptr = '\0';
+
+	do      {
+		*--ptr = array[n % base];
+		n /= base;
+	} while (n != 0);
+
+	if (sign)
+		*--ptr = sign;
+	return (ptr);
 }
