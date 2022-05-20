@@ -1,9 +1,9 @@
 #include "simpleshell.h"
 
 /**
- * _strdup - copes a string to another
+ * _strdup - copies a string to another string
  * @str: the array
- * Return: pointer of sting copied
+ * Return: pointer of string copied
  */
 char *_strdup(char *str)
 {
@@ -30,7 +30,6 @@ char *_strdup(char *str)
  * @num: num
  * @base: base
  * Return: char
- * Reference: https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407
  **/
 char *_itoa(int num, int base)
 {
