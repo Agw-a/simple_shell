@@ -1,7 +1,7 @@
-#include "simpleshell.h"
+#include "shell.h"
 
 /**
- *_calloc -allocated memoria for nmeb elemn de zise bytes
+ *_calloc -allocated memory for the nmeb element 
  *@nmemb: number of element in the array
  *@size: bytes for each position in the array
  *Return: pointer void
