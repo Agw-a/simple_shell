@@ -1,8 +1,9 @@
 #include "shell.h"
 
 /**
- * main - creates a prompt that reads input, parses it, executes it and waits
- * for another command unless told to exit
+ * main - creates a prompt that reads input,
+ * parses it, executes it and waits
+ * for another command unlessinstructed to exit
  * @ac: number of args
  * @av: argument vector
  * @env: environment variable
