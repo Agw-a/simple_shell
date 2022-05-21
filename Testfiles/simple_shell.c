@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 
 /**
- * sighandle_r- checks for signals in terminal
+ * sighandle_r- checks for prompts in terminal
  * interrupt character.
  * @signum:signal whose behavior to control(int)
  * Return:no return
