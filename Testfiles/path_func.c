@@ -2,7 +2,7 @@
 
 /**
  * _which - identifies the path of the command(*args) that is being passed
- * to it
+ * to thge function.
  * @foundpath: the command that is being passed to it
  * Return: the complete path of the command or 0 on failure
  */
